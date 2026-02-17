@@ -1,0 +1,18 @@
+# Sensitive exports
+exported-zaps-*.json
+
+# Dev screenshots
+screenshots/
+
+# Claude Code internals
+.claude/
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
