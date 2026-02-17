@@ -6,6 +6,7 @@ screenshots/
 
 # Claude Code internals
 .claude/
+CLAUDE.md
 
 # Environment and secrets
 .env
