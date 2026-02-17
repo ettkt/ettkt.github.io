@@ -490,8 +490,12 @@
                 <span>PHP</span>
                 <span>JavaScript</span>
                 <span>Python</span>
+                <span>Slack</span>
+                <span>Google Sheets</span>
+                <span>OpenAI</span>
                 <span>Gravity Forms</span>
                 <span>WHMCS</span>
+                <span>Google Drive API</span>
             </div>
         </header>
 
@@ -504,18 +508,42 @@
                 <button class="filter-btn" data-filter="automation">Automation</button>
             </div>
 
+            <!-- 1. AI Document Processing — most complex (39-40 steps, dual AI) -->
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>AI Document Processing &amp; Filing System</h3>
+                    <p class="subtitle">Client automation &middot; 2 zaps, 39&ndash;40 steps each</p>
+                    <p>A dual-zap document intelligence pipeline that watches Google Drive upload folders for new invoices and bank statements. Each file is converted to text, read by Gemini AI to extract structured data (client names, vendors, bank names, dates), then automatically renamed and filed into the correct nested folder. A second AI call matches extracted metadata to existing folder names, with branching logic to handle missing folders gracefully.</p>
+                    <ul>
+                        <li>Gemini 2.5 Flash Lite reads raw document text and extracts structured fields &mdash; no templates or OCR rules needed</li>
+                        <li>Second AI call (OpenAI) matches extracted data to the correct destination folder from a dynamic folder list</li>
+                        <li>Auto-renames files using AI-extracted metadata (e.g., ClientName.Vendor.Date.pdf)</li>
+                        <li>Every processed document is logged to Google Sheets for a complete audit trail</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Zapier</span>
+                        <span>Gemini AI</span>
+                        <span>OpenAI</span>
+                        <span>Google Drive API</span>
+                        <span>Zapier Paths (Branching)</span>
+                        <span>Google Sheets</span>
+                        <span>Google Apps Script</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2. Intercom Sidebar — real custom engineering -->
             <article class="project-card" data-category="integration">
                 <div class="project-body">
                     <span class="category-label">Integration</span>
-                    <h3>Intercom Sidebar — WHMCS Integration</h3>
-                    <p class="subtitle">Internal tool &middot; Intercom Canvas Kit App</p>
-                    <p>An Intercom Inbox sidebar app that displays WHMCS billing data directly within the agent workspace. When an agent opens a conversation, the sidebar automatically looks up the contact's email and shows their client info, subscriptions, invoices, notes, and tickets — all without leaving Intercom.</p>
+                    <h3>Intercom Sidebar &mdash; WHMCS Integration</h3>
+                    <p class="subtitle">Internal tool &middot; <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> Canvas Kit App</p>
+                    <p>An <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> Inbox sidebar app that displays WHMCS billing data directly within the agent workspace. When an agent opens a conversation, the sidebar automatically looks up the contact's email and shows their client info, subscriptions, invoices, notes, and tickets &mdash; all without leaving Intercom.</p>
                     <ul>
-                        <li>Reduced time agents spend switching to external billing portals &mdash; freeing them to focus on assessing leads and responding faster to customers</li>
+                        <li>Reduced time agents spend switching to external billing portals &mdash; freeing them to respond faster to customers</li>
                         <li>Real-time WHMCS client lookup by email with parallel data fetching</li>
-                        <li>Shows active subscriptions, overdue invoices, recent tickets, and client notes</li>
                         <li>Custom PHP API modules to work around broken WHMCS 8.13.0 endpoints</li>
-                        <li>HMAC-SHA256 signature verification on all incoming requests</li>
                         <li>Scales to zero on GCP Cloud Run &mdash; effectively $0/month to operate</li>
                     </ul>
                     <div class="tech-tags">
@@ -530,44 +558,18 @@
                 </div>
             </article>
 
-            <article class="project-card" data-category="integration">
-                <div class="project-body">
-                    <span class="category-label">Integration</span>
-                    <h3>Intercom Domain Attribute Service</h3>
-                    <p class="subtitle">Internal tool &middot; Webhook-driven microservice</p>
-                    <p>A lightweight service that automatically extracts the email domain from Intercom contacts and writes it to a custom "Domain" attribute. This enables other Intercom apps and automations to route, filter, and report by company domain.</p>
-                    <ul>
-                        <li>Unlocked domain-based routing and reporting that wasn't possible before &mdash; enabling smarter automation workflows across Intercom</li>
-                        <li>Processes 5 webhook event types for real-time domain extraction</li>
-                        <li>Bulk backfill operation for existing contacts with pagination and rate limiting</li>
-                        <li>Duplicate detection &mdash; skips contacts that already have the correct domain set</li>
-                        <li>HMAC signature verification on webhooks (SHA-1) and backfill (SHA-256)</li>
-                        <li>Scales to zero on GCP Cloud Run &mdash; effectively $0/month to operate</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>Intercom API</span>
-                        <span>Webhooks</span>
-                        <span>GCP Cloud Run</span>
-                        <span>Docker</span>
-                    </div>
-                </div>
-            </article>
-
+            <!-- 3. AI Escalation — AI classification + multi-system -->
             <article class="project-card" data-category="automation">
                 <div class="project-body">
                     <span class="category-label">Automation</span>
                     <h3>AI-Powered Intercom Escalation System</h3>
                     <p class="subtitle">Internal tool &middot; Multi-zap automation</p>
-                    <p>A two-zap system that monitors all incoming Intercom conversations and replies, using Gemini AI to classify messages as escalations requiring immediate attention. When an escalation is detected, it auto-creates an Asana task and sends a real-time notification card to Google Chat &mdash; ensuring no urgent issue goes unnoticed.</p>
+                    <p>A two-zap system that monitors all incoming <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> conversations and replies, using Gemini AI to classify messages as escalations requiring immediate attention. When an escalation is detected, it auto-creates an Asana task and sends a real-time notification card to Google Chat &mdash; ensuring no urgent issue goes unnoticed.</p>
                     <ul>
-                        <li>Gemini 2.5 Flash Lite classifies messages as "Immediate Attention" or "Normal Support" with reasoning</li>
-                        <li>Monitors both new conversations and customer replies for mid-thread escalations</li>
+                        <li>Replaced manual review of every conversation &mdash; surfaces urgent issues 24/7</li>
+                        <li>Gemini 2.5 Flash Lite classifies messages as &ldquo;Immediate Attention&rdquo; or &ldquo;Normal Support&rdquo; with reasoning</li>
                         <li>Deduplication via Zapier Storage prevents duplicate alerts for the same conversation</li>
                         <li>Auto-creates Asana tasks with AI-generated summary, Intercom link, and due date</li>
-                        <li>Real-time Google Chat notification cards with direct links to conversation and task</li>
-                        <li>Replaced manual review of every conversation &mdash; automatically surfaces urgent issues to key people for triage, running 24/7</li>
                     </ul>
                     <div class="tech-tags">
                         <span>Zapier</span>
@@ -580,17 +582,86 @@
                 </div>
             </article>
 
+            <!-- 4. Domain Attribute — alternate to integration -->
+            <article class="project-card" data-category="integration">
+                <div class="project-body">
+                    <span class="category-label">Integration</span>
+                    <h3>Intercom Domain Attribute Service</h3>
+                    <p class="subtitle">Internal tool &middot; Webhook-driven microservice</p>
+                    <p>A lightweight service that automatically extracts the email domain from <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> contacts and writes it to a custom &ldquo;Domain&rdquo; attribute. This enables other Intercom apps and automations to route, filter, and report by company domain.</p>
+                    <ul>
+                        <li>Unlocked domain-based routing and reporting that wasn&rsquo;t possible before</li>
+                        <li>Processes 5 webhook event types for real-time domain extraction</li>
+                        <li>Bulk backfill operation for existing contacts with pagination and rate limiting</li>
+                        <li>HMAC signature verification on webhooks (SHA-1) and backfill (SHA-256)</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>Intercom API</span>
+                        <span>Webhooks</span>
+                        <span>GCP Cloud Run</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. Meeting Notes — 7 connected zaps -->
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>AI-Powered Meeting Notes Pipeline</h3>
+                    <p class="subtitle">Client automation &middot; 7 connected zaps</p>
+                    <p>A complete meeting workflow automation that handles everything from pre-meeting attendance forms to post-meeting AI-generated summaries. Google Meet recordings and audio uploads are transcribed, summarized by AI, formatted into meeting notes via Apps Script, and distributed to the team on Slack &mdash; all without manual intervention.</p>
+                    <ul>
+                        <li>Eliminated manual meeting note-taking &mdash; AI transcribes and summarizes recordings automatically</li>
+                        <li>7 zaps work together: attendance forms, transcript processing, AI summarization, and Slack distribution</li>
+                        <li>Supports both Google Meet recordings and manual audio uploads</li>
+                        <li>Google Apps Script middleware creates and distributes formatted meeting note documents</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Zapier</span>
+                        <span>Zapier AI</span>
+                        <span>Google Apps Script</span>
+                        <span>Slack API</span>
+                        <span>Webhooks</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6. Risk Management — 22-step single zap -->
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>Risk Management Alert System</h3>
+                    <p class="subtitle">Client automation &middot; Single zap, 22 steps</p>
+                    <p>A 22-step automation that monitors a risk management spreadsheet and routes alerts based on risk category. Using Zapier&rsquo;s branching paths, a single webhook trigger fans out into five parallel branches &mdash; each handling a different risk type with its own Slack channel notification and conditional email escalation when due dates are imminent.</p>
+                    <ul>
+                        <li>Single zap handles 5 risk categories: IPAM, Single Risk, Hazardous Manual Tasks, Scheduled Maintenance, and Licences</li>
+                        <li>Branching paths route each alert to the correct Slack channel with category-specific messaging</li>
+                        <li>Conditional email escalation &mdash; only fires when due dates are within 1 day</li>
+                        <li>Replaced manual spreadsheet monitoring with automated, real-time alerting</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Zapier</span>
+                        <span>Webhooks</span>
+                        <span>Zapier Paths (Branching)</span>
+                        <span>Slack API</span>
+                        <span>Gmail API</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 7. Event Registration -->
             <article class="project-card" data-category="automation">
                 <div class="project-body">
                     <span class="category-label">Automation</span>
                     <h3>Community Event Registration Pipeline</h3>
-                    <p class="subtitle">Internal tool &middot; Form-driven automation</p>
+                    <p class="subtitle">Internal tool &middot; Form-to-CRM automation</p>
                     <p>Automates the registration flow for a recurring community event. When someone submits the sign-up form, the zap syncs their details to Intercom &mdash; creating new contacts when needed &mdash; and triggers tracking events for audience segmentation and follow-up workflows.</p>
                     <ul>
                         <li>End-to-end automation &mdash; zero manual data entry from form submission to CRM</li>
-                        <li>Gravity Forms submission triggers the full registration pipeline</li>
                         <li>Branching logic checks Intercom for existing contacts to avoid duplicates</li>
-                        <li>Auto-creates new Intercom contacts with name and email when needed</li>
                         <li>Fires custom data events in Intercom for segmentation and automation triggers</li>
                         <li>Sends registration data to Google Apps Script for Google Chat notifications</li>
                     </ul>
@@ -600,6 +671,29 @@
                         <span>Intercom</span>
                         <span>Google Apps Script</span>
                         <span>Google Chat</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 8. Asset Expiry -->
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>Asset Expiry Reminder System</h3>
+                    <p class="subtitle">Client automation &middot; 3 zaps</p>
+                    <p>An automated compliance tracking system that monitors expiration dates for vehicles, properties, and licenses. When an expiry approaches, the system logs the details to a Google Sheet, sends a formatted Slack alert with renewal details, and fires an HTML email notification to the accounts team &mdash; ensuring nothing lapses unnoticed.</p>
+                    <ul>
+                        <li>Proactive alerts prevent expired registrations, leases, and licenses from going unnoticed</li>
+                        <li>Webhook-triggered pipeline: intake &rarr; Sheets logging &rarr; date formatting &rarr; Slack + email</li>
+                        <li>Covers three asset categories: vehicles, properties, and business licenses</li>
+                        <li>HTML-formatted email alerts with expiry details sent to accounts and management</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Zapier</span>
+                        <span>Webhooks</span>
+                        <span>Google Sheets</span>
+                        <span>Slack API</span>
+                        <span>Email</span>
                     </div>
                 </div>
             </article>
