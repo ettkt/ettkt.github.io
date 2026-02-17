@@ -68,6 +68,23 @@
             border-bottom-color: #1a1a1a;
         }
 
+        /* Skills */
+        .skills {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skills span {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            color: #444;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
         /* Category Filters */
         .filters {
             display: flex;
@@ -337,6 +354,12 @@
             border-bottom-color: #e0e0e0;
         }
 
+        [data-theme="dark"] .skills span {
+            background: #1a1a1a;
+            border-color: #2a2a2a;
+            color: #999;
+        }
+
         [data-theme="dark"] .project-card {
             background: #1a1a1a;
             border-color: #2a2a2a;
@@ -435,6 +458,10 @@
             .project-body {
                 padding: 24px;
             }
+
+            .skills {
+                gap: 6px;
+            }
         }
     </style>
 </head>
@@ -449,6 +476,22 @@
                 <a href="https://github.com/Shimotakatote/" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.linkedin.com/in/roland-huang-1541533a4/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="mailto:rolandbonhuang@gmail.com">Email</a>
+            </div>
+            <div class="skills">
+                <span>Zapier</span>
+                <span>Intercom</span>
+                <span>Node.js</span>
+                <span>GCP Cloud Run</span>
+                <span>Docker</span>
+                <span>Gemini AI</span>
+                <span>Google Workspace</span>
+                <span>Webhooks &amp; APIs</span>
+                <span>Asana</span>
+                <span>PHP</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>Gravity Forms</span>
+                <span>WHMCS</span>
             </div>
         </header>
 
@@ -468,11 +511,12 @@
                     <p class="subtitle">Internal tool &middot; Intercom Canvas Kit App</p>
                     <p>An Intercom Inbox sidebar app that displays WHMCS billing data directly within the agent workspace. When an agent opens a conversation, the sidebar automatically looks up the contact's email and shows their client info, subscriptions, invoices, notes, and tickets — all without leaving Intercom.</p>
                     <ul>
+                        <li>Reduced time agents spend switching to external billing portals &mdash; freeing them to focus on assessing leads and responding faster to customers</li>
                         <li>Real-time WHMCS client lookup by email with parallel data fetching</li>
                         <li>Shows active subscriptions, overdue invoices, recent tickets, and client notes</li>
                         <li>Custom PHP API modules to work around broken WHMCS 8.13.0 endpoints</li>
                         <li>HMAC-SHA256 signature verification on all incoming requests</li>
-                        <li>Scales to zero on GCP Cloud Run — effectively $0/month</li>
+                        <li>Scales to zero on GCP Cloud Run &mdash; effectively $0/month to operate</li>
                     </ul>
                     <div class="tech-tags">
                         <span>Node.js</span>
@@ -493,11 +537,12 @@
                     <p class="subtitle">Internal tool &middot; Webhook-driven microservice</p>
                     <p>A lightweight service that automatically extracts the email domain from Intercom contacts and writes it to a custom "Domain" attribute. This enables other Intercom apps and automations to route, filter, and report by company domain.</p>
                     <ul>
+                        <li>Unlocked domain-based routing and reporting that wasn't possible before &mdash; enabling smarter automation workflows across Intercom</li>
                         <li>Processes 5 webhook event types for real-time domain extraction</li>
                         <li>Bulk backfill operation for existing contacts with pagination and rate limiting</li>
-                        <li>Duplicate detection — skips contacts that already have the correct domain set</li>
+                        <li>Duplicate detection &mdash; skips contacts that already have the correct domain set</li>
                         <li>HMAC signature verification on webhooks (SHA-1) and backfill (SHA-256)</li>
-                        <li>Scales to zero on GCP Cloud Run — effectively $0/month</li>
+                        <li>Scales to zero on GCP Cloud Run &mdash; effectively $0/month to operate</li>
                     </ul>
                     <div class="tech-tags">
                         <span>Node.js</span>
@@ -515,13 +560,14 @@
                     <span class="category-label">Automation</span>
                     <h3>AI-Powered Intercom Escalation System</h3>
                     <p class="subtitle">Internal tool &middot; Multi-zap automation</p>
-                    <p>A two-zap system that monitors all incoming Intercom conversations and replies, using Gemini AI to classify messages as escalations requiring immediate attention. When an escalation is detected, it auto-creates an Asana task and sends a real-time notification card to Google Chat.</p>
+                    <p>A two-zap system that monitors all incoming Intercom conversations and replies, using Gemini AI to classify messages as escalations requiring immediate attention. When an escalation is detected, it auto-creates an Asana task and sends a real-time notification card to Google Chat &mdash; ensuring no urgent issue goes unnoticed.</p>
                     <ul>
                         <li>Gemini 2.5 Flash Lite classifies messages as "Immediate Attention" or "Normal Support" with reasoning</li>
                         <li>Monitors both new conversations and customer replies for mid-thread escalations</li>
                         <li>Deduplication via Zapier Storage prevents duplicate alerts for the same conversation</li>
                         <li>Auto-creates Asana tasks with AI-generated summary, Intercom link, and due date</li>
                         <li>Real-time Google Chat notification cards with direct links to conversation and task</li>
+                        <li>Replaced manual review of every conversation &mdash; automatically surfaces urgent issues to key people for triage, running 24/7</li>
                     </ul>
                     <div class="tech-tags">
                         <span>Zapier</span>
@@ -541,6 +587,7 @@
                     <p class="subtitle">Internal tool &middot; Form-driven automation</p>
                     <p>Automates the registration flow for a recurring community event. When someone submits the sign-up form, the zap syncs their details to Intercom &mdash; creating new contacts when needed &mdash; and triggers tracking events for audience segmentation and follow-up workflows.</p>
                     <ul>
+                        <li>End-to-end automation &mdash; zero manual data entry from form submission to CRM</li>
                         <li>Gravity Forms submission triggers the full registration pipeline</li>
                         <li>Branching logic checks Intercom for existing contacts to avoid duplicates</li>
                         <li>Auto-creates new Intercom contacts with name and email when needed</li>
