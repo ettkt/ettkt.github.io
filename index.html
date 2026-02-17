@@ -81,8 +81,24 @@
         }
 
         /* Skills */
-        .skills {
+        .skills-group {
             margin-top: 28px;
+        }
+
+        .skills-group + .skills-group {
+            margin-top: 16px;
+        }
+
+        .skills-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #bbb;
+            margin-bottom: 8px;
+        }
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -95,6 +111,12 @@
             font-size: 0.8rem;
             padding: 4px 12px;
             border-radius: 4px;
+        }
+
+        .skills.skills-ai span {
+            background: #faf5ff;
+            border-color: #e9d5ff;
+            color: #7c3aed;
         }
 
         /* Category Filters */
@@ -366,6 +388,16 @@
             border-bottom-color: #e0e0e0;
         }
 
+        [data-theme="dark"] .skills-label {
+            color: #555;
+        }
+
+        [data-theme="dark"] .skills.skills-ai span {
+            background: #1e1030;
+            border-color: #4c1d95;
+            color: #a78bfa;
+        }
+
         [data-theme="dark"] .skills span {
             background: #1a1a1a;
             border-color: #2a2a2a;
@@ -489,23 +521,39 @@
                 <a href="https://www.linkedin.com/in/roland-huang-1541533a4/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="mailto:rolandbonhuang@gmail.com">Email</a>
             </div>
-            <div class="skills">
-                <span>Zapier</span>
-                <span>Intercom</span>
-                <span>Node.js</span>
-                <span>GCP Cloud Run</span>
-                <span>Docker</span>
-                <span>Gemini AI</span>
-                <span>Google Workspace APIs</span>
-                <span>Webhooks &amp; APIs</span>
-                <span>Asana</span>
-                <span>PHP</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>Slack</span>
-                <span>OpenAI</span>
-                <span>Gravity Forms</span>
-                <span>WHMCS</span>
+            <div class="skills-group">
+                <p class="skills-label">Tech Stack &amp; Platforms</p>
+                <div class="skills">
+                    <span>Node.js</span>
+                    <span>PHP</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Docker</span>
+                    <span>GCP Cloud Run</span>
+                    <span>Webhooks &amp; APIs</span>
+                    <span>Zapier</span>
+                    <span>Make</span>
+                    <span>n8n</span>
+                    <span>Intercom</span>
+                    <span>Google Workspace APIs</span>
+                    <span>Asana</span>
+                    <span>Slack</span>
+                    <span>Gravity Forms</span>
+                    <span>WHMCS</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <p class="skills-label">AI Tools</p>
+                <div class="skills skills-ai">
+                    <span>Claude Code</span>
+                    <span>Cursor</span>
+                    <span>ChatGPT</span>
+                    <span>Gemini AI</span>
+                    <span>OpenAI API</span>
+                    <span>LLM Orchestration</span>
+                    <span>Prompt Engineering</span>
+                    <span>Agentic Workflows</span>
+                </div>
             </div>
         </header>
 
@@ -712,7 +760,7 @@
         </section>
 
         <footer>
-            <p>Roland Huang &middot; <a href="mailto:rolandbonhuang@gmail.com">rolandbonhuang@gmail.com</a></p>
+            <p>Roland Huang &middot; <a href="mailto:rolandbonhuang@gmail.com">rolandbonhuang@gmail.com</a> &middot; &copy; 2026</p>
         </footer>
     </div>
 
