@@ -48,6 +48,26 @@
             max-width: 600px;
         }
 
+        .header-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .header-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .header-links a:hover {
+            color: #1a1a1a;
+            border-bottom-color: #1a1a1a;
+        }
+
         /* Category Filters */
         .filters {
             display: flex;
@@ -100,6 +120,7 @@
             overflow: hidden;
             margin-bottom: 24px;
             transition: box-shadow 0.2s ease;
+            border-top: 4px solid #e5e5e5;
         }
 
         .project-card:hover {
@@ -108,6 +129,25 @@
 
         .project-card.hidden {
             display: none;
+        }
+
+        /* Category accent colors */
+        .project-card[data-category="integration"] {
+            border-top-color: #3b82f6;
+        }
+
+        .project-card[data-category="automation"] {
+            border-top-color: #f59e0b;
+        }
+
+        .project-card[data-category="integration"] .category-label {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .project-card[data-category="automation"] .category-label {
+            background: #fffbeb;
+            color: #d97706;
         }
 
         .project-image {
@@ -288,6 +328,15 @@
             color: #666;
         }
 
+        [data-theme="dark"] .header-links a {
+            color: #888;
+        }
+
+        [data-theme="dark"] .header-links a:hover {
+            color: #e0e0e0;
+            border-bottom-color: #e0e0e0;
+        }
+
         [data-theme="dark"] .project-card {
             background: #1a1a1a;
             border-color: #2a2a2a;
@@ -314,6 +363,16 @@
         [data-theme="dark"] .project-card .category-label {
             background: #2a2a2a;
             color: #888;
+        }
+
+        [data-theme="dark"] .project-card[data-category="integration"] .category-label {
+            background: #1e3a5f;
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .project-card[data-category="automation"] .category-label {
+            background: #422006;
+            color: #fbbf24;
         }
 
         [data-theme="dark"] .project-card p {
@@ -386,6 +445,11 @@
             <h1>Roland Huang</h1>
             <p class="tagline">Automation &amp; Integration Engineer at itGenius</p>
             <p class="intro">I build internal tools and automations that connect business systems together — making support teams faster and operations smoother.</p>
+            <div class="header-links">
+                <a href="https://github.com/rolandhuang" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/rolandhuang" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:rolandbonhuang@gmail.com">Email</a>
+            </div>
         </header>
 
         <section class="projects">
@@ -398,10 +462,6 @@
             </div>
 
             <article class="project-card" data-category="integration">
-                <div class="project-image">
-                    <!-- Replace with: <img src="images/intercom-sidebar.png" alt="Intercom Sidebar screenshot"> -->
-                    Screenshot coming soon
-                </div>
                 <div class="project-body">
                     <span class="category-label">Integration</span>
                     <h3>Intercom Sidebar — WHMCS Integration</h3>
@@ -427,10 +487,6 @@
             </article>
 
             <article class="project-card" data-category="integration">
-                <div class="project-image">
-                    <!-- Replace with: <img src="images/domain-attribute.png" alt="Domain Attribute diagram"> -->
-                    Screenshot coming soon
-                </div>
                 <div class="project-body">
                     <span class="category-label">Integration</span>
                     <h3>Intercom Domain Attribute Service</h3>
@@ -454,11 +510,58 @@
                 </div>
             </article>
 
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>AI-Powered Intercom Escalation System</h3>
+                    <p class="subtitle">Internal tool &middot; Multi-zap automation</p>
+                    <p>A two-zap system that monitors all incoming Intercom conversations and replies, using Gemini AI to classify messages as escalations requiring immediate attention. When an escalation is detected, it auto-creates an Asana task and sends a real-time notification card to Google Chat.</p>
+                    <ul>
+                        <li>Gemini 2.5 Flash Lite classifies messages as "Immediate Attention" or "Normal Support" with reasoning</li>
+                        <li>Monitors both new conversations and customer replies for mid-thread escalations</li>
+                        <li>Deduplication via Zapier Storage prevents duplicate alerts for the same conversation</li>
+                        <li>Auto-creates Asana tasks with AI-generated summary, Intercom link, and due date</li>
+                        <li>Real-time Google Chat notification cards with direct links to conversation and task</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Zapier</span>
+                        <span>Intercom</span>
+                        <span>Gemini AI</span>
+                        <span>Asana</span>
+                        <span>Google Chat Webhooks</span>
+                        <span>Zapier Storage</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>Community Event Registration Pipeline</h3>
+                    <p class="subtitle">Internal tool &middot; Form-driven automation</p>
+                    <p>Automates the registration flow for a recurring community event. When someone submits the sign-up form, the zap syncs their details to Intercom &mdash; creating new contacts when needed &mdash; and triggers tracking events for audience segmentation and follow-up workflows.</p>
+                    <ul>
+                        <li>Gravity Forms submission triggers the full registration pipeline</li>
+                        <li>Branching logic checks Intercom for existing contacts to avoid duplicates</li>
+                        <li>Auto-creates new Intercom contacts with name and email when needed</li>
+                        <li>Fires custom data events in Intercom for segmentation and automation triggers</li>
+                        <li>Sends registration data to Google Apps Script for Google Chat notifications</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Zapier</span>
+                        <span>Gravity Forms</span>
+                        <span>Intercom</span>
+                        <span>Google Apps Script</span>
+                        <span>Google Chat</span>
+                    </div>
+                </div>
+            </article>
+
             <p class="no-results">No projects in this category yet.</p>
         </section>
 
         <footer>
-            <p>Roland Huang &middot; <a href="mailto:help@itgenius.com">help@itgenius.com</a></p>
+            <p>Roland Huang &middot; <a href="mailto:rolandbonhuang@gmail.com">rolandbonhuang@gmail.com</a></p>
         </footer>
     </div>
 
