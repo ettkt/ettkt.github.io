@@ -119,6 +119,98 @@
             color: #7c3aed;
         }
 
+        /* Experience */
+        .experience {
+            padding: 60px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .experience h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 24px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: #e5e5e5;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #e5e5e5;
+            border: 2px solid #fafafa;
+        }
+
+        .timeline-item.current::before {
+            background: #e67e22;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .timeline-item .company {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 2px;
+        }
+
+        .timeline-item .duration {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #555;
+            font-size: 0.95rem;
+            max-width: 600px;
+        }
+
+        .timeline-item .edu-label {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 6px;
+        }
+
         /* Category Filters */
         .filters {
             display: flex;
@@ -289,6 +381,41 @@
             border-radius: 4px;
         }
 
+        /* Show more */
+        .show-more-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: none;
+            border: 1px dashed #ddd;
+            border-radius: 8px;
+            color: #888;
+            font-size: 0.9rem;
+            font-family: inherit;
+            cursor: pointer;
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .show-more-btn:hover {
+            border-color: #999;
+            color: #555;
+        }
+
+        .show-more-btn.hidden-btn {
+            display: none;
+        }
+
+        [data-theme="dark"] .show-more-btn {
+            border-color: #333;
+            color: #666;
+        }
+
+        [data-theme="dark"] .show-more-btn:hover {
+            border-color: #555;
+            color: #999;
+        }
+
         /* No results */
         .no-results {
             display: none;
@@ -357,6 +484,48 @@
 
         [data-theme="dark"] header p.intro {
             color: #aaa;
+        }
+
+        [data-theme="dark"] .experience {
+            border-bottom-color: #2a2a2a;
+        }
+
+        [data-theme="dark"] .experience h2 {
+            color: #666;
+        }
+
+        [data-theme="dark"] .timeline::before {
+            background: #2a2a2a;
+        }
+
+        [data-theme="dark"] .timeline-item::before {
+            background: #2a2a2a;
+            border-color: #121212;
+        }
+
+        [data-theme="dark"] .timeline-item.current::before {
+            background: #e67e22;
+        }
+
+        [data-theme="dark"] .timeline-item h3 {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .timeline-item .company {
+            color: #999;
+        }
+
+        [data-theme="dark"] .timeline-item .duration {
+            color: #666;
+        }
+
+        [data-theme="dark"] .timeline-item p {
+            color: #999;
+        }
+
+        [data-theme="dark"] .timeline-item .edu-label {
+            background: #2a2a2a;
+            color: #666;
         }
 
         [data-theme="dark"] .filter-btn {
@@ -520,6 +689,7 @@
                 <a href="https://github.com/Shimotakatote/" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.linkedin.com/in/roland-huang-1541533a4/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="mailto:rolandbonhuang@gmail.com">Email</a>
+                <a href="resume.html" target="_blank">Resume</a>
             </div>
             <div class="skills-group">
                 <p class="skills-label">Tech Stack &amp; Platforms</p>
@@ -556,6 +726,30 @@
                 </div>
             </div>
         </header>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <h3>Workflow &amp; Automations Engineer</h3>
+                    <div class="company">itGenius &mdash; Australian managed IT services provider</div>
+                    <div class="duration">July 2024 &ndash; Present</div>
+                    <p>Building AI-powered document processing pipelines, custom Intercom integrations, and multi-system automations across the Google ecosystem. Connecting platforms like Intercom, WHMCS, Asana, and Slack through Zapier, n8n, and custom Node.js services.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Automations Developer</h3>
+                    <div class="company">Freelance Contract &mdash; Hawaii-based wellness startup</div>
+                    <div class="duration">Oct 2025 &ndash; Dec 2025</div>
+                    <p>Built an automated lead-to-accounting pipeline syncing website forms with Xero, and a lead tracking dashboard for conversion analytics.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="edu-label">Education</span>
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <div class="company">Notre Dame University</div>
+                    <div class="duration">2024</div>
+                </div>
+            </div>
+        </section>
 
         <section class="projects">
             <h2>Projects</h2>
@@ -687,7 +881,30 @@
                 </div>
             </article>
 
-            <!-- 6. Risk Management — 22-step single zap -->
+            <!-- 6. GW Audit Report Generator — multi-file Apps Script, doc/PDF generation -->
+            <article class="project-card" data-category="automation">
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>Google Workspace Audit Report Generator</h3>
+                    <p class="subtitle">Internal tool &middot; Multi-file Google Apps Script</p>
+                    <p>A modular Apps Script tool that transforms Google Sheets audit data into branded PDF reports. Users select which sections to include via a custom dialog, and the tool extracts data from 8+ sheets, populates a Google Doc template with color-coded risk levels, converts it to PDF, and optionally emails it to stakeholders &mdash; all from a custom menu inside Sheets.</p>
+                    <ul>
+                        <li>Eliminated hours of manual report formatting &mdash; one click generates a complete branded audit PDF</li>
+                        <li>Custom HTML dialog lets users pick sections (Security, Domains, Users, Groups, etc.) and toggle email delivery</li>
+                        <li>Auto-generates an Actionable Recommendations sheet by aggregating all High Risk items across audit categories</li>
+                        <li>Multi-domain email delivery auditing with SPF, DKIM, DMARC analysis and risk-level color coding</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Google Apps Script</span>
+                        <span>Google Docs API</span>
+                        <span>Google Sheets API</span>
+                        <span>Google Drive API</span>
+                        <span>HTML/CSS/JS</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 7. Risk Management — 22-step single zap -->
             <article class="project-card" data-category="automation">
                 <div class="project-body">
                     <span class="category-label">Automation</span>
@@ -756,6 +973,8 @@
                 </div>
             </article>
 
+            <button class="show-more-btn" id="showMoreBtn"></button>
+
             <p class="no-results">No projects in this category yet.</p>
         </section>
 
@@ -782,29 +1001,58 @@
             updateIcon();
         });
 
+        // Show more / less
+        const INITIAL_SHOW = 4;
+        const cards = document.querySelectorAll('.project-card');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        let expanded = false;
+        let activeFilter = 'all';
+
+        function getFilteredCards() {
+            return [...cards].filter(c => activeFilter === 'all' || c.dataset.category === activeFilter);
+        }
+
+        function applyVisibility() {
+            const filtered = getFilteredCards();
+            const noResults = document.querySelector('.no-results');
+
+            cards.forEach(c => c.classList.add('hidden'));
+            const limit = expanded ? filtered.length : INITIAL_SHOW;
+            filtered.slice(0, limit).forEach(c => c.classList.remove('hidden'));
+
+            const remaining = filtered.length - INITIAL_SHOW;
+            if (remaining > 0 && !expanded) {
+                showMoreBtn.textContent = 'Show ' + remaining + ' more project' + (remaining > 1 ? 's' : '');
+                showMoreBtn.classList.remove('hidden-btn');
+            } else if (expanded && filtered.length > INITIAL_SHOW) {
+                showMoreBtn.textContent = 'Show less';
+                showMoreBtn.classList.remove('hidden-btn');
+            } else {
+                showMoreBtn.classList.add('hidden-btn');
+            }
+
+            noResults.classList.toggle('visible', filtered.length === 0);
+        }
+
+        showMoreBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            applyVisibility();
+        });
+
+        applyVisibility();
+
         // Category filters
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.project-card');
-        const noResults = document.querySelector('.no-results');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                const filter = btn.dataset.filter;
+                activeFilter = btn.dataset.filter;
+                expanded = false;
 
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                let visibleCount = 0;
-                cards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-
-                noResults.classList.toggle('visible', visibleCount === 0);
+                applyVisibility();
             });
         });
     </script>

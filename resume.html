@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roland Huang &mdash; Resume</title>
+    <style>
+        @page {
+            margin: 0.5in 0.6in;
+            size: letter;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.45;
+            font-size: 10.5pt;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in 0.6in;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 2px;
+        }
+
+        .header .title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .header .contact {
+            font-size: 9.5pt;
+            color: #555;
+        }
+
+        .header .contact a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .header .contact span {
+            margin: 0 6px;
+            color: #ccc;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+        }
+
+        /* Summary */
+        .summary {
+            color: #333;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+
+        /* Experience */
+        .role {
+            margin-bottom: 14px;
+        }
+
+        .role:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .role-title {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .role-date {
+            font-size: 9.5pt;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .role-company {
+            font-size: 9.5pt;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .role-company em {
+            font-style: normal;
+            color: #777;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 3px;
+            color: #333;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 32px;
+            font-size: 10pt;
+            color: #333;
+        }
+
+        /* Tools */
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            font-size: 10pt;
+            color: #333;
+        }
+
+        /* Education */
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .edu-school {
+            font-size: 9.5pt;
+            color: #555;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 10.5pt;
+            }
+        }
+
+        /* Screen: add a subtle border for preview */
+        @media screen {
+            body {
+                box-shadow: 0 0 20px rgba(0,0,0,0.08);
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ROLAND HUANG</h1>
+        <div class="title">Workflow and Automations Engineer</div>
+        <div class="contact">
+            General Santos City, Philippines<span>|</span>
+            <a href="mailto:rolandbonhuang@gmail.com">rolandbonhuang@gmail.com</a><span>|</span>
+            <a href="https://github.com/Shimotakatote/">GitHub</a><span>|</span>
+            <a href="https://www.linkedin.com/in/roland-huang-1541533a4/">LinkedIn</a><span>|</span>
+            <a href="https://shimotakatote.github.io/huang-portfolio/">Portfolio</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Summary</div>
+        <p class="summary">Workflow and Automation Engineer building AI-powered document processing pipelines, custom Intercom integrations, and multi-system automations for managed IT environments. I work across the Google ecosystem &mdash; Apps Script, Cloud Run, Workspace APIs &mdash; and connect platforms like Intercom, WHMCS, Asana, and Slack through Zapier, n8n, and custom Node.js services.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Workflow and Automations Engineer</div>
+                <div class="role-date">July 2024 &ndash; Present</div>
+            </div>
+            <div class="role-company">itGenius &mdash; <em>Australian managed IT services provider specializing in Google Workspace</em></div>
+            <ul>
+                <li>Built a custom <b>Intercom Inbox sidebar app</b> (<b>Node.js</b>, Express, <b>GCP Cloud Run</b>) that displays real-time WHMCS billing data directly in the agent workspace, eliminating tab-switching for a 10-person support team</li>
+                <li>Designed a <b>40-step dual-AI document processing pipeline</b> (<b>Zapier</b> + <b>Gemini</b> + <b>OpenAI</b>) that processes 20&ndash;30 documents per week &mdash; extracting structured data, auto-renaming files, and filing them into the correct Drive folders</li>
+                <li>Deployed an <b>AI escalation system</b> that monitors all Intercom conversations using <b>Gemini</b> classification, auto-creates Asana tasks for urgent issues, and sends real-time Google Chat alerts &mdash; replacing manual triage</li>
+                <li>Automated meeting notes across a <b>7-zap pipeline</b>: recordings transcribed, summarized by AI, formatted via <b>Apps Script</b>, and distributed to Slack &mdash; eliminating manual note-taking for a 10-person team</li>
+                <li>Built a <b>Google Workspace audit report generator</b> (multi-file <b>Apps Script</b>) with custom UI dialog, risk-level color coding, SPF/DKIM/DMARC analysis, and one-click PDF generation with email delivery</li>
+                <li>Wrote comprehensive technical documentation for every tool &mdash; architecture, deployment, secrets management, and maintenance guides &mdash; enabling the team to operate systems independently</li>
+            </ul>
+        </div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Automations Developer</div>
+                <div class="role-date">Oct 2025 &ndash; Dec 2025</div>
+            </div>
+            <div class="role-company">Freelance Contract &mdash; <em>Hawaii-based wellness and meditation startup</em></div>
+            <ul>
+                <li>Built an automated pipeline to sync website leads directly with Xero, connecting form submissions to client accounting with zero manual data entry for a 3-person team</li>
+                <li>Created a lead tracking dashboard that pulls form submissions into visual reports, enabling the founder to analyze conversion trends and lead quality at a glance</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="skills-grid">
+            <div>Workflow &amp; Process Automation</div>
+            <div>AI Integration (Gemini, OpenAI)</div>
+            <div>API Integration &amp; REST APIs</div>
+            <div>Technical Documentation &amp; SOPs</div>
+            <div>Intelligent Document Processing</div>
+            <div>Systems Architecture</div>
+            <div>Data Visualization &amp; Analytics</div>
+            <div>Quality Assurance &amp; Validation</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Tools &amp; Platforms</div>
+        <div class="tools-list">
+            <div>JavaScript</div>
+            <div>Node.js</div>
+            <div>Python</div>
+            <div>PHP</div>
+            <div>Google Apps Script</div>
+            <div>Docker</div>
+            <div>GCP Cloud Run</div>
+            <div>Zapier</div>
+            <div>n8n</div>
+            <div>Make</div>
+            <div>Intercom</div>
+            <div>WHMCS</div>
+            <div>Asana</div>
+            <div>Slack</div>
+            <div>Google Workspace APIs</div>
+            <div>Claude Code</div>
+            <div>Cursor</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="edu-header">
+            <div class="edu-degree">Bachelor of Science in Computer Science</div>
+            <div class="role-date">2024</div>
+        </div>
+        <div class="edu-school">Notre Dame University</div>
+    </div>
+</body>
+</html>
