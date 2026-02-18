@@ -94,6 +94,34 @@
             border-bottom-color: #1a1a1a;
         }
 
+        .cta-btn {
+            display: inline-block;
+            margin-top: 28px;
+            background: #1a1a1a;
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none !important;
+            border-bottom: none !important;
+            transition: background 0.2s ease;
+        }
+
+        .cta-btn:hover {
+            background: #333 !important;
+            border-bottom: none !important;
+        }
+
+        [data-theme="dark"] .cta-btn {
+            background: #e0e0e0;
+            color: #121212 !important;
+        }
+
+        [data-theme="dark"] .cta-btn:hover {
+            background: #ccc !important;
+        }
+
         /* Skills */
         .skills-group {
             margin-top: 28px;
@@ -710,6 +738,7 @@
                 <a href="mailto:rolandbonhuang@gmail.com">Email</a>
                 <a href="roland-huang-resume.pdf" target="_blank">Resume</a>
             </div>
+            <a href="mailto:rolandbonhuang@gmail.com" class="cta-btn">Let&rsquo;s Work Together &rarr;</a>
             <div class="skills-group">
                 <p class="skills-label">Tech Stack &amp; Platforms</p>
                 <div class="skills">
@@ -785,7 +814,7 @@
                     <span class="category-label">Automation</span>
                     <h3>AI Document Processing &amp; Filing System</h3>
                     <p class="subtitle">Client automation &middot; 2 zaps, 39&ndash;40 steps each</p>
-                    <p>A dual-zap document intelligence pipeline that watches Google Drive upload folders for new invoices and bank statements. Each file is converted to text, read by Gemini AI to extract structured data (client names, vendors, bank names, dates), then automatically renamed and filed into the correct nested folder. A second AI call matches extracted metadata to existing folder names, with branching logic to handle missing folders gracefully.</p>
+                    <p>Filing invoices and bank statements manually meant staff spent significant time renaming files and hunting for the right folder — a process that didn&rsquo;t scale as document volume grew. A dual-zap pipeline watches Google Drive for new uploads, uses Gemini AI to extract structured metadata (client, vendor, date), then automatically renames and files each document into the correct nested folder. The result: zero manual filing, with every processed file logged to Google Sheets for a full audit trail.</p>
                     <ul>
                         <li>Gemini 2.5 Flash Lite reads raw document text and extracts structured fields &mdash; no templates or OCR rules needed</li>
                         <li>Second AI call (OpenAI) matches extracted data to the correct destination folder from a dynamic folder list</li>
@@ -813,7 +842,7 @@
                     <span class="category-label">Integration</span>
                     <h3>Intercom Sidebar &mdash; <a href="https://www.whmcs.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">WHMCS</a> Integration</h3>
                     <p class="subtitle">Internal tool &middot; <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> Canvas Kit App</p>
-                    <p>An <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> Inbox sidebar app that displays <a href="https://www.whmcs.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">WHMCS</a> billing data directly within the agent workspace. When an agent opens a conversation, the sidebar automatically looks up the contact&rsquo;s email and shows their client info, subscriptions, invoices, notes, and tickets &mdash; all without leaving Intercom.</p>
+                    <p>Support agents were constantly switching between <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> and the <a href="https://www.whmcs.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">WHMCS</a> billing portal to answer basic billing questions, breaking their workflow and slowing response times. This Intercom Canvas Kit sidebar app automatically looks up the contact&rsquo;s WHMCS account when an agent opens a conversation, surfacing client info, subscriptions, invoices, and tickets inline. Agents now resolve billing queries without ever leaving Intercom.</p>
                     <ul>
                         <li>Reduced time agents spend switching to external billing portals &mdash; freeing them to respond faster to customers</li>
                         <li>Real-time WHMCS client lookup by email with parallel data fetching</li>
@@ -841,7 +870,7 @@
                     <span class="category-label">Automation</span>
                     <h3>AI-Powered Intercom Escalation System</h3>
                     <p class="subtitle">Internal tool &middot; Multi-zap automation</p>
-                    <p>A two-zap system that monitors all incoming <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> conversations and replies, using Gemini AI to classify messages as escalations requiring immediate attention. When an escalation is detected, it auto-creates an Asana task and sends a real-time notification card to Google Chat &mdash; ensuring no urgent issue goes unnoticed.</p>
+                    <p>With high inbound conversation volume, urgent escalations were easy to miss without someone manually reviewing every thread &mdash; a gap that risked SLA breaches. A two-zap system uses Gemini AI to classify every incoming <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> message, auto-creates an Asana task for confirmed escalations, and fires a real-time alert card to Google Chat. Urgent issues are now surfaced 24/7 with zero manual review.</p>
                     <ul>
                         <li>Replaced manual review of every conversation &mdash; surfaces urgent issues 24/7</li>
                         <li>Gemini 2.5 Flash Lite classifies messages as &ldquo;Immediate Attention&rdquo; or &ldquo;Normal Support&rdquo; with reasoning</li>
@@ -868,7 +897,7 @@
                     <span class="category-label">Integration</span>
                     <h3>Intercom Domain Attribute Service</h3>
                     <p class="subtitle">Internal tool &middot; Webhook-driven microservice</p>
-                    <p>A lightweight service that automatically extracts the email domain from <a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> contacts and writes it to a custom &ldquo;Domain&rdquo; attribute. This enables other Intercom apps and automations to route, filter, and report by company domain.</p>
+                    <p><a href="https://www.intercom.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">Intercom</a> had no native way to segment or route contacts by company domain, making domain-based filtering and reporting impossible without manual tagging. A lightweight webhook-driven microservice now extracts the email domain from every contact in real time and writes it to a custom &ldquo;Domain&rdquo; attribute. This unlocked domain-based routing, reporting, and automation triggers across the workspace &mdash; with no ongoing manual effort.</p>
                     <ul>
                         <li>Unlocked domain-based routing and reporting that wasn&rsquo;t possible before</li>
                         <li>Processes 5 webhook event types for real-time domain extraction</li>
@@ -892,7 +921,7 @@
                     <span class="category-label">Automation</span>
                     <h3>AI-Powered Meeting Notes Pipeline</h3>
                     <p class="subtitle">Client automation &middot; 7 connected zaps</p>
-                    <p>A complete meeting workflow automation that handles everything from pre-meeting attendance forms to post-meeting AI-generated summaries. Google Meet recordings and audio uploads are transcribed, summarized by AI, formatted into meeting notes via Apps Script, and distributed to the team on Slack &mdash; all without manual intervention.</p>
+                    <p>Teams were losing time taking manual meeting notes, then spending more time formatting and sharing them afterward &mdash; a task that got skipped when people were busy. A 7-zap pipeline now handles the full workflow: attendance forms, Google Meet recording intake, AI transcription and summarization, Apps Script formatting, and Slack distribution. Meeting notes land in the team&rsquo;s Slack channel within minutes of a call ending, automatically.</p>
                     <ul>
                         <li>Eliminated manual meeting note-taking &mdash; AI transcribes and summarizes recordings automatically</li>
                         <li>7 zaps work together: attendance forms, transcript processing, AI summarization, and Slack distribution</li>
@@ -915,7 +944,7 @@
                     <span class="category-label">Automation</span>
                     <h3>Google Workspace Audit Report Generator</h3>
                     <p class="subtitle">Internal tool &middot; Multi-file Google Apps Script</p>
-                    <p>A modular Apps Script tool that transforms Google Sheets audit data into branded PDF reports. Users select which sections to include via a custom dialog, and the tool extracts data from 8+ sheets, populates a Google Doc template with color-coded risk levels, converts it to PDF, and optionally emails it to stakeholders &mdash; all from a custom menu inside Sheets.</p>
+                    <p>Producing Google Workspace audit reports required hours of manually copying data from multiple spreadsheet tabs and reformatting everything into a branded document &mdash; a process prone to errors and inconsistency. This Apps Script tool extracts data from 8+ audit sheets, populates a Google Doc template with color-coded risk levels, and exports a branded PDF in a single click from a custom Sheets menu. What previously took hours now takes seconds, with a consistent, professional output every time.</p>
                     <ul>
                         <li>Eliminated hours of manual report formatting &mdash; one click generates a complete branded audit PDF</li>
                         <li>Custom HTML dialog lets users pick sections (Security, Domains, Users, Groups, etc.) and toggle email delivery</li>
@@ -938,7 +967,7 @@
                     <span class="category-label">Automation</span>
                     <h3>Risk Management Alert System</h3>
                     <p class="subtitle">Client automation &middot; Single zap, 22 steps</p>
-                    <p>A 22-step automation that monitors a risk management spreadsheet and routes alerts based on risk category. Using Zapier&rsquo;s branching paths, a single webhook trigger fans out into five parallel branches &mdash; each handling a different risk type with its own Slack channel notification and conditional email escalation when due dates are imminent.</p>
+                    <p>A risk management spreadsheet covering five different categories required someone to manually check for upcoming due dates and notify the right team &mdash; a process that was error-prone and easy to forget. A 22-step Zapier automation fans out from a single webhook into five parallel branches, routing each risk type to the correct Slack channel and escalating by email only when a due date is within 24 hours. Zero manual monitoring required.</p>
                     <ul>
                         <li>Single zap handles 5 risk categories: IPAM, Single Risk, Hazardous Manual Tasks, Scheduled Maintenance, and Licences</li>
                         <li>Branching paths route each alert to the correct Slack channel with category-specific messaging</li>
@@ -961,7 +990,7 @@
                     <span class="category-label">Automation</span>
                     <h3>Community Event Registration Pipeline</h3>
                     <p class="subtitle">Internal tool &middot; Form-to-CRM automation</p>
-                    <p>Automates the registration flow for a recurring community event. When someone submits the sign-up form, the zap syncs their details to Intercom &mdash; creating new contacts when needed &mdash; and triggers tracking events for audience segmentation and follow-up workflows.</p>
+                    <p>Event sign-ups submitted via Gravity Forms had to be manually entered into Intercom for follow-up &mdash; a slow, error-prone process that compounded across each recurring event. A Zapier automation now handles the full flow: deduplicating contacts, syncing registrations to Intercom, firing segmentation events, and posting notifications to Google Chat. Zero manual data entry from form submission to CRM.</p>
                     <ul>
                         <li>End-to-end automation &mdash; zero manual data entry from form submission to CRM</li>
                         <li>Branching logic checks Intercom for existing contacts to avoid duplicates</li>
@@ -984,7 +1013,7 @@
                     <span class="category-label">Automation</span>
                     <h3>Asset Expiry Reminder System</h3>
                     <p class="subtitle">Client automation &middot; 3 zaps</p>
-                    <p>An automated compliance tracking system that monitors expiration dates for vehicles, properties, and licenses. When an expiry approaches, the system logs the details to a Google Sheet, sends a formatted Slack alert with renewal details, and fires an HTML email notification to the accounts team &mdash; ensuring nothing lapses unnoticed.</p>
+                    <p>Tracking expiry dates for vehicles, properties, and business licenses across a spreadsheet left room for compliance gaps if someone forgot to check or missed a buried email. A 3-zap pipeline now monitors expiration dates proactively, logs each alert to Google Sheets, fires a formatted Slack message, and sends an HTML email to the accounts team before anything lapses. Expired assets are caught before they become a liability.</p>
                     <ul>
                         <li>Proactive alerts prevent expired registrations, leases, and licenses from going unnoticed</li>
                         <li>Webhook-triggered pipeline: intake &rarr; Sheets logging &rarr; date formatting &rarr; Slack + email</li>
