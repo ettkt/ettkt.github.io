@@ -1032,13 +1032,16 @@
 
             <!-- 9. Slack Task Creator — personal project, n8n + Gemini -->
             <article class="project-card" data-category="integration">
+                <div class="project-image">
+                    <img src="images/slack-task-creator.png" alt="n8n workflow showing Webhook, AI Agent with Gemini, Asana tool, and Slack HTTP Request nodes">
+                </div>
                 <div class="project-body">
                     <span class="category-label">Integration</span>
                     <h3>Slack Natural Language Task Creator</h3>
                     <p class="subtitle">Personal project &middot; <a href="https://github.com/ettkt/slack-task-creator" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">GitHub</a></p>
                     <p>A Slack slash command that parses natural language into structured Asana tasks using Gemini AI. Type <code>/task remind Sarah to send the invoice by Friday, high priority</code> and the bot extracts the assignee, due date, and priority, creates the Asana task, and confirms in Slack.</p>
                     <ul>
-                        <li>Gemini 2.0 Flash extracts structured fields (task name, assignee, due date, priority) from freeform text</li>
+                        <li>Gemini 2.5 Flash extracts structured fields (task name, assignee, due date, priority) from freeform text</li>
                         <li>Creates Asana tasks with parsed metadata and links back to the original Slack message</li>
                         <li>Error handling with automatic Slack notifications when any step fails</li>
                         <li>Self-hosted n8n workflow with webhook trigger for zero ongoing cost</li>
