@@ -14,6 +14,9 @@ CLAUDE.md
 *.key
 *.pem
 
+# Personal notes
+personal-projects-guide.md
+
 # OS files
 .DS_Store
 Thumbs.db
