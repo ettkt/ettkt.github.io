@@ -877,7 +877,34 @@
                 </div>
             </article>
 
-            <!-- 3. AI Escalation — AI classification + multi-system -->
+            <!-- 3. AI Customer Inquiry Router — Make.com, AI + routing -->
+            <article class="project-card" data-category="automation">
+                <div class="project-image">
+                    <img src="images/customer-inquiry-router.png" alt="Make.com scenario showing Gmail trigger, AI classification, router with 4 routes to Slack channels">
+                </div>
+                <div class="project-body">
+                    <span class="category-label">Automation</span>
+                    <h3>AI-Powered Customer Inquiry Router</h3>
+                    <p class="subtitle">Personal project &middot; <a href="https://github.com/ettkt/ai-powered-customer-inquiry-router" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:#ccc">GitHub</a></p>
+                    <p>Customer inquiries arriving in a single inbox had to be manually read and forwarded to the right team, delaying responses and creating bottlenecks. This Make.com scenario watches Gmail for new emails, classifies intent using AI, and routes each message to the correct Slack channel automatically. Returns and bulk quotes are logged to Google Sheets for tracking. Four categories are handled: order status, returns, bulk quotes, and general support.</p>
+                    <ul>
+                        <li>AI classifies email intent into 4 categories with confidence scoring and a one-line summary</li>
+                        <li>Router with filtered branches sends each inquiry to the correct Slack channel (#orders, #returns, #sales, #support)</li>
+                        <li>Return requests and bulk quotes auto-log to Google Sheets for audit and follow-up</li>
+                        <li>Fallback route catches unclassified emails so nothing gets lost</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span>Make.com</span>
+                        <span>Gmail</span>
+                        <span>OpenAI</span>
+                        <span>Slack API</span>
+                        <span>Google Sheets</span>
+                        <span>Router / Filters</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. AI Escalation — AI classification + multi-system -->
             <article class="project-card" data-category="automation">
                 <div class="project-image">
                     <img src="images/escalation-system.png" alt="Zapier editor showing 12-step escalation automation flow">
