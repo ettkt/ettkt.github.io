@@ -501,6 +501,40 @@
             color: var(--accent);
         }
 
+        /* ── Scroll indicator ── */
+        .scroll-hint {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-top: 32px;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        .scroll-hint.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-hint .arrow-down {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
+        }
+
+        @media (max-width: 900px) {
+            .scroll-hint { display: none; }
+        }
+
         /* ── Cursor spotlight (subtle) ── */
         .spotlight {
             pointer-events: none;
@@ -646,6 +680,10 @@
                         <li><a href="#projects">Projects</a></li>
                     </ul>
                 </nav>
+
+                <div class="scroll-hint" id="scrollHint">
+                    <span class="arrow-down">&darr;</span> scroll to explore
+                </div>
             </div>
 
             <div class="sidebar-bottom">
@@ -658,7 +696,7 @@
                 <a href="mailto:rolandbonhuang@gmail.com" class="social-link" aria-label="Email">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>
                 </a>
-                <a href="roland-huang-resume.pdf" target="_blank" class="social-link" aria-label="Resume" style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;">CV</a>
+                <a href="resume-linked.html" target="_blank" class="social-link" aria-label="Resume" style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;">CV</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9790;</button>
             </div>
         </aside>
@@ -666,7 +704,7 @@
         <main class="main">
             <section id="about" class="section about">
                 <h2 class="section-heading">About</h2>
-                <p>I started building automations when I noticed how much time teams lose to repetitive manual tasks. That led me to <a href="https://www.itgenius.com.au/" target="_blank" rel="noopener">itGenius</a>, where I now build AI-powered document processing pipelines, custom <a href="#projects">Intercom integrations</a>, and multi-system automations across the Google ecosystem.</p>
+                <p>I started building automations when I noticed how much time teams lose to repetitive manual tasks. That led me to <a href="https://www.itgenius.com.au/" target="_blank" rel="noopener">itGenius</a>, where I now build AI-powered document processing pipelines, custom <a href="#projects">Intercom integrations</a>, and multi-system automations across the Google ecosystem. I also take on freelance projects, most recently building lead-to-accounting pipelines for a Hawaii-based startup.</p>
                 <p>My work sits at the intersection of <strong>automation platforms</strong> (Zapier, Make, n8n), <strong>AI/LLMs</strong> (Gemini, OpenAI, Claude), and <strong>custom code</strong> (Node.js, PHP, Python). I connect platforms like Intercom, WHMCS, Asana, and Slack through APIs, webhooks, and serverless services on GCP &mdash; usually at $0/month to operate.</p>
                 <p>When I&rsquo;m not wiring systems together, I&rsquo;m exploring agentic workflows and building tools with Claude Code, Cursor, and the latest LLM APIs.</p>
             </section>
@@ -713,7 +751,7 @@
                     </div>
                 </div>
 
-                <a href="roland-huang-resume.pdf" target="_blank" class="show-all-btn">View Full R&eacute;sum&eacute; <span class="arrow">&rarr;</span></a>
+                <a href="resume-linked.html" target="_blank" class="show-all-btn">View Full R&eacute;sum&eacute; <span class="arrow">&rarr;</span></a>
             </section>
 
             <section id="projects" class="section">
@@ -955,6 +993,13 @@
 
         window.addEventListener('scroll', updateActiveLink, { passive: true });
         updateActiveLink();
+
+        // Hide scroll hint after scrolling
+        const scrollHint = document.getElementById('scrollHint');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) scrollHint.classList.add('hidden');
+            else scrollHint.classList.remove('hidden');
+        }, { passive: true });
 
         // Show more projects
         const showMoreBtn = document.getElementById('showMoreBtn');

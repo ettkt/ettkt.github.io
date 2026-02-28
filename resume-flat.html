@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roland Huang - Resume (Print)</title>
+    <style>
+        @page {
+            margin: 0.3in 0.5in;
+            size: letter;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.35;
+            font-size: 10pt;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.3in 0.5in;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 8px;
+        }
+
+        .header h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1px;
+        }
+
+        .header .title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .header .contact {
+            font-size: 7.8pt;
+            color: #555;
+        }
+
+        .header .contact a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .header .contact span {
+            margin: 0 4px;
+            color: #ccc;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 7px;
+        }
+
+        .section-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+        }
+
+        /* Summary */
+        .summary {
+            color: #333;
+            font-size: 9.5pt;
+            line-height: 1.45;
+        }
+
+        /* Experience */
+        .role {
+            margin-bottom: 6px;
+        }
+
+        .role:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .role-title {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .role-date {
+            font-size: 9.5pt;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .role-company {
+            font-size: 9pt;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .role-company em {
+            font-style: normal;
+            color: #777;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 2px;
+            color: #333;
+        }
+
+        /* Tools */
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 14px;
+            font-size: 10pt;
+            color: #333;
+        }
+
+        /* Education */
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .edu-school {
+            font-size: 9.5pt;
+            color: #555;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                font-size: 10pt;
+                box-shadow: none;
+            }
+        }
+
+        /* Screen: add a subtle border for preview */
+        @media screen {
+            body {
+                box-shadow: 0 0 20px rgba(0,0,0,0.08);
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ROLAND HUANG</h1>
+        <div class="title">Workflow and Automations Engineer</div>
+        <div class="contact">
+            General Santos City, Philippines<span>|</span>rolandbonhuang@gmail.com<span>|</span>github.com/ettkt<span>|</span>linkedin.com/in/roland-huang-8965583b1<span>|</span>ettkt.github.io
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Summary</div>
+        <p class="summary">Automation engineer who builds systems that eliminate repetitive manual work. My AI-powered pipelines and custom integrations help teams process documents, triage support conversations, and connect business tools automatically, giving people hours back every week.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Workflow and Automations Engineer</div>
+                <div class="role-date">2024 &ndash; Present</div>
+            </div>
+            <div class="role-company">itGenius - <em>Australian managed IT services provider specializing in Google Workspace</em></div>
+            <ul>
+                <li><b>Eliminated tab-switching for a 10-person support team</b> by building a custom sidebar app that surfaces real-time billing data directly inside the chat tool. Scales to zero at $0/month (Node.js, Express, GCP Cloud Run)</li>
+                <li><b>Automated processing of 20&ndash;30 documents per week</b> with a dual-AI pipeline that extracts structured data, auto-renames files, and files them into the correct folders, fully hands-free (Zapier, Gemini, OpenAI)</li>
+                <li><b>Replaced manual conversation triage</b> with an AI system that monitors all support conversations, flags urgent issues as tasks, and sends real-time alerts to the team (Zapier, Gemini, Asana)</li>
+                <li><b>Eliminated manual note-taking for a 10-person team</b> with a 7-step pipeline that transcribes recordings, summarizes with AI, and delivers formatted notes to Slack within minutes (Zapier, Apps Script)</li>
+                <li><b>Reduced hours of manual audit reporting to one click.</b> A custom tool pulls data from 8+ sources, generates a branded PDF with color-coded risk levels, and emails it to the client (Apps Script)</li>
+                <li><b>Enabled domain-based customer routing</b> by deploying a webhook microservice that tags contacts by email domain in real time with secure verification (Node.js, GCP Cloud Run)</li>
+            </ul>
+        </div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Automations Developer</div>
+                <div class="role-date">Oct 2025 &ndash; Dec 2025</div>
+            </div>
+            <div class="role-company">Freelance Contract - <em>Hawaii-based wellness and meditation startup</em></div>
+            <ul>
+                <li><b>Removed all manual data entry for a 3-person team</b> by connecting website lead forms directly to their accounting system. New leads flow into Xero automatically (Webhooks, Xero API)</li>
+                <li><b>Gave the founder real-time visibility into lead quality</b> with a dashboard that turns form submissions into visual conversion reports at a glance</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Projects</div>
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">AI Customer Inquiry Router</div>
+                <div class="role-date">github.com/ettkt/ai-powered-customer-inquiry-router</div>
+            </div>
+            <div class="role-company">Make.com &middot; OpenAI &middot; Slack &middot; Gmail &middot; Google Sheets</div>
+            <ul>
+                <li><b>Sorts incoming emails automatically by intent.</b> AI classifies each message with confidence scoring and routes it to the correct team channel; return requests and bulk quotes auto-log to a spreadsheet (Make.com, OpenAI, Slack)</li>
+            </ul>
+        </div>
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Slack Natural Language Task Creator</div>
+                <div class="role-date">github.com/ettkt/slack-task-creator</div>
+            </div>
+            <div class="role-company">n8n &middot; Gemini AI &middot; Asana API &middot; Slack API</div>
+            <ul>
+                <li><b>Turn a plain-English Slack message into a structured task.</b> Type what you need, and AI creates the right task with the right fields in Asana; self-hosted for zero ongoing cost (n8n, Gemini AI, Slack)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Tools &amp; Platforms</div>
+        <div class="tools-list">
+            <div>JavaScript</div>
+            <div>Node.js</div>
+            <div>Express</div>
+            <div>Python</div>
+            <div>PHP</div>
+            <div>HTML/CSS</div>
+            <div>Google Apps Script</div>
+            <div>Docker</div>
+            <div>GCP Cloud Run</div>
+            <div>Zapier</div>
+            <div>n8n</div>
+            <div>Make.com</div>
+            <div>Intercom</div>
+            <div>WHMCS</div>
+            <div>Asana</div>
+            <div>Slack</div>
+            <div>Xero</div>
+            <div>Google Workspace APIs</div>
+            <div>Claude Code</div>
+            <div>Cursor</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="edu-header">
+            <div class="edu-degree">Bachelor of Science in Computer Science</div>
+            <div class="role-date">2024</div>
+        </div>
+        <div class="edu-school">Notre Dame University</div>
+    </div>
+</body>
+</html>
