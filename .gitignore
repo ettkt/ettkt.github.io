@@ -17,6 +17,9 @@ CLAUDE.md
 # Personal notes
 personal-projects-guide.md
 
+# Database files
+*.db
+
 # OS files
 .DS_Store
 Thumbs.db
