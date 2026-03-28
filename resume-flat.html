@@ -170,6 +170,39 @@
                 margin-top: 20px;
                 margin-bottom: 20px;
             }
+
+            .download-bar {
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                z-index: 100;
+            }
+
+            .download-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 24px;
+                background: #e67e22;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                font-family: inherit;
+                font-size: 10pt;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4);
+                transition: background 0.2s ease, transform 0.2s ease;
+            }
+
+            .download-btn:hover {
+                background: #cf6d17;
+                transform: translateY(-1px);
+            }
+        }
+
+        @media print {
+            .download-bar { display: none !important; }
         }
     </style>
 </head>
@@ -184,7 +217,7 @@
 
     <div class="section">
         <div class="section-title">Summary</div>
-        <p class="summary">Automation engineer who builds systems that eliminate repetitive manual work. My AI-powered pipelines and custom integrations help teams process documents, triage support conversations, and connect business tools automatically, giving people hours back every week.</p>
+        <p class="summary">Automation engineer who builds systems that eliminate repetitive manual work. I ship AI-powered pipelines, custom Intercom apps, and multi-platform integrations that help teams process documents, triage support conversations, monitor customer satisfaction, and connect business tools automatically, giving people hours back every week.</p>
     </div>
 
     <div class="section">
@@ -197,12 +230,11 @@
             </div>
             <div class="role-company">itGenius - <em>Australian managed IT services provider specializing in Google Workspace</em></div>
             <ul>
-                <li><b>Eliminated tab-switching for a 10-person support team</b> by building a custom sidebar app that surfaces real-time billing data directly inside the chat tool. Scales to zero at $0/month (Node.js, Express, GCP Cloud Run)</li>
-                <li><b>Automated processing of 20&ndash;30 documents per week</b> with a dual-AI pipeline that extracts structured data, auto-renames files, and files them into the correct folders, fully hands-free (Zapier, Gemini, OpenAI)</li>
-                <li><b>Replaced manual conversation triage</b> with an AI system that monitors all support conversations, flags urgent issues as tasks, and sends real-time alerts to the team (Zapier, Gemini, Asana)</li>
-                <li><b>Eliminated manual note-taking for a 10-person team</b> with a 7-step pipeline that transcribes recordings, summarizes with AI, and delivers formatted notes to Slack within minutes (Zapier, Apps Script)</li>
+                <li><b>Built two custom Intercom sidebar apps</b> that surface real-time billing, invoicing, and account data from two separate platforms directly inside the chat tool, eliminating tab-switching for a 10-person support team. Both scale to zero at $0/month (Node.js, Intercom Canvas Kit, GCP Cloud Run)</li>
+                <li><b>Shipped an Intercom-to-Asana sidebar</b> that lets agents search and view Asana tasks by domain or name without leaving the chat window, with HMAC-secured webhooks (Node.js, GCP Cloud Run)</li>
+                <li><b>Automated processing of 20-30 documents per week</b> with a dual-AI pipeline (39-40 steps each) that extracts structured data, auto-renames files, and files them into the correct folders, fully hands-free (Zapier, Gemini, OpenAI)</li>
+                <li><b>Replaced manual conversation triage and CX monitoring</b> with AI systems that classify every support conversation, flag urgent issues as Asana tasks, detect low satisfaction scores, and alert the team in real time (Zapier, Gemini, Asana)</li>
                 <li><b>Reduced hours of manual audit reporting to one click.</b> A custom tool pulls data from 8+ sources, generates a branded PDF with color-coded risk levels, and emails it to the client (Apps Script)</li>
-                <li><b>Enabled domain-based customer routing</b> by deploying a webhook microservice that tags contacts by email domain in real time with secure verification (Node.js, GCP Cloud Run)</li>
             </ul>
         </div>
 
@@ -228,7 +260,7 @@
             </div>
             <div class="role-company">Python &middot; FastAPI &middot; SQLAlchemy &middot; PostgreSQL &middot; JavaScript &middot; REST API</div>
             <ul>
-                <li><b>Full-stack order management system for a public safety uniform retailer.</b> Tracks orders end-to-end: department intake, auto-generated SKUs with barcodes/QR codes, embroidery production queue, fitting appointment scheduling, inventory alerts with reorder suggestions, and a real-time dashboard (Python, FastAPI, SQLAlchemy)</li>
+                <li><b>Full-stack order management system for a public safety uniform retailer.</b> Tracks orders end-to-end: department intake, auto-generated SKUs with barcodes/QR codes, embroidery production queue, fitting appointment scheduling, inventory alerts with reorder suggestions, and a real-time dashboard</li>
             </ul>
         </div>
         <div class="role">
@@ -238,7 +270,7 @@
             </div>
             <div class="role-company">Make.com &middot; OpenAI &middot; Slack &middot; Gmail &middot; Google Sheets</div>
             <ul>
-                <li><b>Sorts incoming emails automatically by intent.</b> AI classifies each message with confidence scoring and routes it to the correct team channel; return requests and bulk quotes auto-log to a spreadsheet (Make.com, OpenAI, Slack)</li>
+                <li><b>Sorts incoming emails automatically by intent.</b> AI classifies each message with confidence scoring and routes it to the correct team channel; return requests and bulk quotes auto-log to a spreadsheet</li>
             </ul>
         </div>
         <div class="role">
@@ -248,8 +280,18 @@
             </div>
             <div class="role-company">n8n &middot; Gemini AI &middot; Asana API &middot; Slack API</div>
             <ul>
-                <li><b>Turn a plain-English Slack message into a structured task.</b> Type what you need, and AI creates the right task with the right fields in Asana; self-hosted for zero ongoing cost (n8n, Gemini AI, Slack)</li>
+                <li><b>Turn a plain-English Slack message into a structured task.</b> Type what you need, and AI creates the right task with the right fields in Asana; self-hosted for zero ongoing cost</li>
             </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Certified Cyber Warden (Levels 1, 2 &amp; 3)</div>
+                <div class="role-date">2026</div>
+            </div>
         </div>
     </div>
 
@@ -277,8 +319,10 @@
             <div>WHMCS</div>
             <div>Asana</div>
             <div>Slack</div>
+            <div>Stripe API</div>
             <div>Xero</div>
             <div>Google Workspace APIs</div>
+            <div>Vercel</div>
             <div>Claude Code</div>
             <div>Cursor</div>
         </div>
@@ -291,6 +335,10 @@
             <div class="role-date">2024</div>
         </div>
         <div class="edu-school">Notre Dame University</div>
+    </div>
+
+    <div class="download-bar">
+        <button class="download-btn" onclick="window.print()">&#8595; Download PDF</button>
     </div>
 </body>
 </html>

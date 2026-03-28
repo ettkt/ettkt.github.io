@@ -687,9 +687,9 @@
         <main class="main">
             <section id="about" class="section about">
                 <h2 class="section-heading">About</h2>
-                <p>I started building automations when I noticed how much time teams lose to repetitive manual tasks. That led me to <a href="https://www.itgenius.com.au/" target="_blank" rel="noopener">itGenius</a>, where I now build AI-powered document processing pipelines, custom <a href="#projects">Intercom integrations</a>, and multi-system automations across the Google ecosystem. I also take on freelance projects, most recently building lead-to-accounting pipelines for a Hawaii-based startup.</p>
-                <p>My work sits at the intersection of <strong>automation platforms</strong> (Zapier, Make, n8n), <strong>AI/LLMs</strong> (Gemini, OpenAI, Claude), and <strong>custom code</strong> (Node.js, PHP, Python). I connect platforms like Intercom, WHMCS, Asana, and Slack through APIs, webhooks, and serverless services on GCP - usually at $0/month to operate.</p>
-                <p>When I&rsquo;m not wiring systems together, I&rsquo;m exploring agentic workflows and building tools with Claude Code, Cursor, and the latest LLM APIs.</p>
+                <p>I started building automations when I noticed how much time teams lose to repetitive manual tasks. That led me to <a href="https://www.itgenius.com.au/" target="_blank" rel="noopener">itGenius</a>, where I now build custom <a href="#projects">Intercom sidebar apps</a>, AI-powered document processing pipelines, CX monitoring systems, and multi-platform integrations across the Google and Stripe ecosystems. I also take on freelance projects, most recently building lead-to-accounting pipelines for a Hawaii-based startup.</p>
+                <p>My work sits at the intersection of <strong>automation platforms</strong> (Zapier, Make, n8n), <strong>AI/LLMs</strong> (Gemini, OpenAI, Claude), and <strong>custom code</strong> (Node.js, PHP, Python). I connect platforms like Intercom, Stripe, Asana, and Slack through APIs, webhooks, and serverless services on GCP, usually at $0/month to operate.</p>
+                <p>When I'm not wiring systems together, I'm exploring agentic workflows and building tools with Claude Code, Cursor, and the latest LLM APIs.</p>
             </section>
 
             <section id="experience" class="section">
@@ -700,13 +700,14 @@
                         <div class="exp-content">
                             <h3>Workflow &amp; Automations Engineer</h3>
                             <div class="exp-company">itGenius &middot; Australian managed IT services</div>
-                            <p>Building AI-powered document processing pipelines, custom Intercom integrations, and multi-system automations across the Google ecosystem. Connecting platforms like Intercom, WHMCS, Asana, and Slack through Zapier, n8n, and custom Node.js services.</p>
+                            <p>Building custom Intercom sidebar apps, AI-powered document processing pipelines, CX score monitoring systems, Stripe billing integrations, and multi-platform automations. Connecting Intercom, Stripe, Asana, and Slack through Zapier, n8n, and custom Node.js services on GCP.</p>
                             <div class="tag-list">
                                 <span class="tag">Node.js</span>
                                 <span class="tag">Zapier</span>
                                 <span class="tag">Gemini AI</span>
                                 <span class="tag">GCP</span>
                                 <span class="tag">Intercom</span>
+                                <span class="tag">Stripe</span>
                             </div>
                         </div>
                     </div>
@@ -792,6 +793,66 @@
                     </div>
 
                     <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>Intercom Sidebar - Billing &amp; Account Data</h3>
+                            <p class="project-subtitle">Intercom Canvas Kit App &middot; Production deployment</p>
+                            <p>Second custom sidebar app that surfaces financial data (invoices, payments, account status) from the company's billing platform directly inside Intercom conversations. Built the v1 prototype, shipped to production, resolved IP banning issues with static IP configuration, and migrated to a dedicated GCP project. Includes client notes integration.</p>
+                            <div class="tag-list">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Intercom</span>
+                                <span class="tag">REST APIs</span>
+                                <span class="tag">GCP Cloud Run</span>
+                                <span class="tag">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>Intercom Asana Sidebar</h3>
+                            <p class="project-subtitle">Intercom Canvas Kit App &middot; HMAC-secured</p>
+                            <p>Lets support agents search and view Asana tasks by domain or contact name without leaving the Intercom chat window. HMAC-verified webhooks, deployed on GCP Cloud Run, migrated to a dedicated project with updated slug.</p>
+                            <div class="tag-list">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Intercom</span>
+                                <span class="tag">Asana API</span>
+                                <span class="tag">GCP Cloud Run</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>CX Score Monitoring &amp; Reporting</h3>
+                            <p class="project-subtitle">Multi-step automation &middot; Intercom + Asana</p>
+                            <p>Monitors customer satisfaction scores from Intercom conversations in real time. Low scores automatically generate detailed reports in Asana with Slack alerts, giving the team instant visibility into customer experience issues.</p>
+                            <div class="tag-list">
+                                <span class="tag">Zapier</span>
+                                <span class="tag">Intercom</span>
+                                <span class="tag">Asana</span>
+                                <span class="tag">Slack</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>Stripe + Intercom Billing Integration</h3>
+                            <p class="project-subtitle">Billing workflow &middot; In production</p>
+                            <p>Integrated Stripe product pages and billing actions directly into Intercom, enabling support agents to manage subscriptions, trigger payments, and view billing status without switching tools.</p>
+                            <div class="tag-list">
+                                <span class="tag">Stripe API</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Intercom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
                             <img src="images/customer-inquiry-router.png" alt="Make.com scenario showing AI classification router">
                         </div>
@@ -855,6 +916,21 @@
                                 <span class="tag">Gemini API</span>
                                 <span class="tag">Asana API</span>
                                 <span class="tag">Slack API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item hidden-project">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>WordPress-to-Intercom Event Sequence Pipeline</h3>
+                            <p class="project-subtitle">Multi-step automation &middot; Campaign triggers</p>
+                            <p>Converts community lead form submissions from WordPress into Intercom events that trigger targeted campaign sequences automatically. End-to-end from form fill to personalized outreach.</p>
+                            <div class="tag-list">
+                                <span class="tag">Zapier</span>
+                                <span class="tag">WordPress</span>
+                                <span class="tag">Intercom</span>
+                                <span class="tag">Gravity Forms</span>
                             </div>
                         </div>
                     </div>
@@ -936,7 +1012,7 @@
             </section>
 
             <section class="section contact">
-                <p>I&rsquo;m always open to discussing new automation projects, integration challenges, or opportunities to collaborate. The best way to reach me is <a href="mailto:rolandbonhuang@gmail.com">by email</a> or through <a href="https://www.linkedin.com/in/roland-huang-8965583b1/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+                <p>I'm always open to discussing new automation projects, integration challenges, or opportunities to collaborate. The best way to reach me is <a href="mailto:rolandbonhuang@gmail.com">by email</a> or through <a href="https://www.linkedin.com/in/roland-huang-8965583b1/" target="_blank" rel="noopener">LinkedIn</a>.</p>
             </section>
 
         </main>
