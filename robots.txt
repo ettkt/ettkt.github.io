@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /resume-flat.html
+Disallow: /resume-linked.html
+
+Sitemap: https://ettkt.github.io/sitemap.xml

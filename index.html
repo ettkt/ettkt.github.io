@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roland Huang - Portfolio</title>
-    <meta name="description" content="Automation &amp; Integration Engineer. I build AI-powered automations and custom integrations - from 40-step document processing pipelines to real-time billing dashboards on GCP.">
+    <meta name="description" content="Roland Huang - AI automation engineer. I architect with Claude Code as primary AI tool and ship production LLM pipelines using Gemini and OpenAI. Custom Intercom apps, multi-platform integrations, GCP serverless.">
+    <link rel="canonical" href="https://ettkt.github.io/">
     <!-- Open Graph -->
-    <meta property="og:title" content="Roland Huang - Portfolio">
-    <meta property="og:description" content="Automation & Integration Engineer. AI-powered automations and custom integrations - from 40-step document processing pipelines to real-time billing dashboards on GCP.">
+    <meta property="og:title" content="Roland Huang - AI Automation Engineer">
+    <meta property="og:description" content="AI automation engineer architecting with Claude Code. Production LLM pipelines using Gemini and OpenAI, custom Intercom apps, and multi-platform integrations on GCP.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ettkt.github.io/">
     <meta property="og:image" content="https://ettkt.github.io/images/og-preview.png">
     <meta property="og:image:width" content="2368">
     <meta property="og:image:height" content="966">
+    <meta property="og:image:alt" content="Roland Huang portfolio site preview">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Roland Huang - Portfolio">
-    <meta name="twitter:description" content="Automation & Integration Engineer. AI-powered automations and custom integrations.">
+    <meta name="twitter:title" content="Roland Huang - AI Automation Engineer">
+    <meta name="twitter:description" content="AI automation engineer architecting with Claude Code. Production LLM pipelines and multi-platform integrations.">
     <meta name="twitter:image" content="https://ettkt.github.io/images/og-preview.png">
+    <!-- Person structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Roland Huang",
+      "url": "https://ettkt.github.io/",
+      "image": "https://ettkt.github.io/images/og-preview.png",
+      "jobTitle": "AI Automation Engineer",
+      "worksFor": { "@type": "Organization", "name": "itGenius", "url": "https://www.itgenius.com.au/" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Notre Dame University" },
+      "address": { "@type": "PostalAddress", "addressLocality": "General Santos City", "addressCountry": "PH" },
+      "sameAs": [
+        "https://github.com/ettkt",
+        "https://www.linkedin.com/in/roland-huang-8965583b1/"
+      ],
+      "knowsAbout": ["Claude Code", "Anthropic Claude", "Gemini API", "OpenAI API", "Prompt Engineering", "AI Automation", "Workflow Automation", "n8n", "Zapier", "Make.com", "Intercom", "Node.js", "Python", "GCP"]
+    }
+    </script>
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231e293b'/><text x='50' y='68' font-size='56' font-family='system-ui' font-weight='600' fill='white' text-anchor='middle'>RH</text></svg>">
     <!-- Google Analytics -->
@@ -40,11 +61,12 @@
             --border-hover: #cbd5e1;
             --text: #334155;
             --text-muted: #64748b;
-            --text-dim: #94a3b8;
+            --text-dim: #64748b;
             --heading: #0f172a;
-            --accent: #0d9488;
-            --accent-hover: #0f766e;
-            --accent-light: rgba(13, 148, 136, 0.08);
+            --accent: #0f766e;
+            --accent-hover: #115e59;
+            --accent-light: rgba(15, 118, 110, 0.1);
+            --tag-text: #115e59;
             --highlight: #f1f5f9;
             --mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Courier New", monospace;
         }
@@ -54,13 +76,14 @@
             --bg-card: #1e293b;
             --border: #1e293b;
             --border-hover: #334155;
-            --text: #94a3b8;
-            --text-muted: #64748b;
-            --text-dim: #475569;
+            --text: #cbd5e1;
+            --text-muted: #94a3b8;
+            --text-dim: #94a3b8;
             --heading: #e2e8f0;
             --accent: #5eead4;
             --accent-hover: #99f6e4;
-            --accent-light: rgba(94, 234, 212, 0.1);
+            --accent-light: rgba(94, 234, 212, 0.12);
+            --tag-text: #5eead4;
             --highlight: #1e293b;
         }
 
@@ -90,6 +113,34 @@
 
         a:hover {
             color: var(--accent-hover);
+        }
+
+        /* Focus styles for accessibility */
+        a:focus-visible,
+        button:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 8px;
+            background: var(--accent);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .skip-link:focus {
+            top: 8px;
+            color: #fff;
         }
 
         /* ── Layout ── */
@@ -339,8 +390,8 @@
             padding: 4px 10px;
             border-radius: 999px;
             background: var(--accent-light);
-            color: var(--accent);
-            font-weight: 500;
+            color: var(--tag-text);
+            font-weight: 600;
             white-space: nowrap;
         }
 
@@ -647,6 +698,7 @@
     </style>
 </head>
 <body>
+    <a href="#projects" class="skip-link">Skip to projects</a>
     <div class="spotlight" id="spotlight"></div>
 
     <div class="page">
@@ -679,7 +731,7 @@
                 <a href="mailto:rolandbonhuang@gmail.com" class="social-link" aria-label="Email">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/></svg>
                 </a>
-                <a href="resume-linked.html" target="_blank" class="social-link" aria-label="Resume" style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;">CV</a>
+                <a href="resume-linked.html" target="_blank" class="social-link" aria-label="CV / Resume" style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;">CV</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9790;</button>
             </div>
         </aside>
@@ -826,7 +878,7 @@
 
                     <div class="project-item">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
-                            <img src="images/intercom-sidebar.png" alt="Intercom sidebar showing WHMCS billing data">
+                            <img src="images/intercom-sidebar.png" alt="Intercom sidebar showing WHMCS billing data" loading="lazy" decoding="async" width="1280" height="800">
                         </div>
                         <div class="project-content">
                             <h3>Intercom Sidebar - WHMCS Integration</h3>
@@ -936,7 +988,7 @@
 
                     <div class="project-item">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
-                            <img src="images/customer-inquiry-router.png" alt="Make.com scenario showing AI classification router">
+                            <img src="images/customer-inquiry-router.png" alt="Make.com scenario showing AI classification router" loading="lazy" decoding="async" width="1280" height="800">
                         </div>
                         <div class="project-content">
                             <h3><a href="https://github.com/ettkt/ai-powered-customer-inquiry-router" target="_blank" rel="noopener">AI Customer Inquiry Router <svg class="ext-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg></a></h3>
@@ -953,7 +1005,7 @@
 
                     <div class="project-item hidden-project">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
-                            <img src="images/escalation-system.png" alt="Zapier editor showing escalation automation flow">
+                            <img src="images/escalation-system.png" alt="Zapier editor showing escalation automation flow" loading="lazy" decoding="async" width="1280" height="800">
                         </div>
                         <div class="project-content">
                             <h3>AI Intercom Escalation System</h3>
@@ -970,7 +1022,7 @@
 
                     <div class="project-item hidden-project">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
-                            <img src="images/domain-attribute.png" alt="Intercom user data panel showing Domain attribute">
+                            <img src="images/domain-attribute.png" alt="Intercom user data panel showing Domain attribute" loading="lazy" decoding="async" width="1280" height="800">
                         </div>
                         <div class="project-content">
                             <h3>Intercom Domain Attribute Service</h3>
@@ -987,7 +1039,7 @@
 
                     <div class="project-item hidden-project">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
-                            <img src="images/slack-task-creator.png" alt="n8n workflow showing Slack task creator">
+                            <img src="images/slack-task-creator.png" alt="n8n workflow showing Slack task creator" loading="lazy" decoding="async" width="1280" height="800">
                         </div>
                         <div class="project-content">
                             <h3><a href="https://github.com/ettkt/slack-task-creator" target="_blank" rel="noopener">Slack Natural Language Task Creator <svg class="ext-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg></a></h3>
@@ -1103,7 +1155,7 @@
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
         <button class="lightbox-close" aria-label="Close image preview">&times;</button>
-        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Project screenshot preview">
     </div>
 
     <script>
@@ -1125,27 +1177,40 @@
             updateIcon();
         });
 
-        // Cursor spotlight (subtle radial gradient following mouse)
+        // Cursor spotlight (subtle radial gradient following mouse, rAF-throttled)
         const spotlight = document.getElementById('spotlight');
+        let spotlightFrame = null;
         document.addEventListener('mousemove', (e) => {
-            spotlight.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, var(--accent-light), transparent 80%)`;
+            if (spotlightFrame) return;
+            const x = e.clientX, y = e.clientY;
+            spotlightFrame = requestAnimationFrame(() => {
+                spotlight.style.background = `radial-gradient(600px circle at ${x}px ${y}px, var(--accent-light), transparent 80%)`;
+                spotlightFrame = null;
+            });
         });
 
-        // Active nav link tracking
+        // Active nav link tracking - cache offsets to avoid forced reflow on scroll
         const navLinks = document.querySelectorAll('.sidebar-nav a');
         const sections = document.querySelectorAll('.section[id]');
+        let sectionOffsets = [];
+
+        function recalcSectionOffsets() {
+            sectionOffsets = Array.from(sections).map(s => ({ id: s.id, top: s.offsetTop - 120 }));
+        }
 
         function updateActiveLink() {
             let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 120;
-                if (window.scrollY >= top) current = section.id;
-            });
+            for (const s of sectionOffsets) {
+                if (window.scrollY >= s.top) current = s.id;
+            }
             navLinks.forEach(link => {
                 link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
         }
 
+        recalcSectionOffsets();
+        window.addEventListener('load', recalcSectionOffsets);
+        window.addEventListener('resize', recalcSectionOffsets, { passive: true });
         window.addEventListener('scroll', updateActiveLink, { passive: true });
         updateActiveLink();
 
