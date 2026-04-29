@@ -687,9 +687,9 @@
         <main class="main">
             <section id="about" class="section about">
                 <h2 class="section-heading">About</h2>
-                <p>I started building automations when I noticed how much time teams lose to repetitive manual tasks. That led me to <a href="https://www.itgenius.com.au/" target="_blank" rel="noopener">itGenius</a>, where I now build custom <a href="#projects">Intercom sidebar apps</a>, AI-powered document processing pipelines, CX monitoring systems, and multi-platform integrations across the Google and Stripe ecosystems. I also take on freelance projects, most recently building lead-to-accounting pipelines for a Hawaii-based startup.</p>
-                <p>My work sits at the intersection of <strong>automation platforms</strong> (Zapier, Make, n8n), <strong>AI/LLMs</strong> (Gemini, OpenAI, Claude), and <strong>custom code</strong> (Node.js, PHP, Python). I connect platforms like Intercom, Stripe, Asana, and Slack through APIs, webhooks, and serverless services on GCP, usually at $0/month to operate.</p>
-                <p>When I'm not wiring systems together, I'm exploring agentic workflows and building tools with Claude Code, Cursor, and the latest LLM APIs.</p>
+                <p>I build AI-powered automations and the workflows that operate them. <a href="#projects">Custom Intercom sidebar apps</a>, multi-step LLM pipelines for document processing and conversation triage, and cross-platform integrations across Intercom, Stripe, Asana, and Slack. Most ship to GCP and run at $0/month idle.</p>
+                <p>Day-to-day I architect and build with <strong>Claude Code</strong> as my primary AI engineering tool, treating it as a true engineering partner rather than autocomplete. My production AI stack also includes <strong>Gemini</strong> and <strong>OpenAI</strong>, picked per task. The work sits at the intersection of <strong>automation platforms</strong> (Zapier, Make, n8n), <strong>agentic AI workflows</strong>, and <strong>custom code</strong> (Node.js, PHP, Python).</p>
+                <p>Currently a Workflow &amp; Automations Engineer at <a href="https://www.itgenius.com.au/" target="_blank" rel="noopener">itGenius</a> (Australian managed IT). Recent freelance: lead-to-accounting pipeline for a Hawaii-based wellness startup.</p>
             </section>
 
             <section id="experience" class="section">
@@ -762,6 +762,22 @@
                     <div class="project-item">
                         <div class="project-thumb no-img">&lt;/&gt;</div>
                         <div class="project-content">
+                            <h3><a href="https://github.com/ettkt/video-downloader-chrome-extension" target="_blank" rel="noopener">Video &amp; M3U8 Detector - Chrome Extension <svg class="ext-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg></a></h3>
+                            <p class="project-subtitle">Manifest V3 &middot; Vanilla JavaScript &middot; Public on GitHub</p>
+                            <p>Free Chrome extension that auto-detects video streams (M3U8/HLS, DASH/MPD, MP4, WebM, FLV) on any website without needing to play the video. Combines passive network interception, DOM scanning, and a live mutation observer to catch dynamically injected players. Color-coded UI per format, one-click copy, zero dependencies, no tracking.</p>
+                            <div class="tag-list">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Chrome Extension</span>
+                                <span class="tag">Manifest V3</span>
+                                <span class="tag">HLS/M3U8</span>
+                                <span class="tag">DASH</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
                             <h3>AI Document Processing &amp; Filing System</h3>
                             <p class="project-subtitle">2 zaps &middot; 39&ndash;40 steps each</p>
                             <p>Dual-zap pipeline watches Google Drive for new uploads, uses Gemini AI to extract structured metadata, then auto-renames and files each document into the correct nested folder. Every document logged to Sheets for audit trail.</p>
@@ -770,6 +786,40 @@
                                 <span class="tag">Gemini AI</span>
                                 <span class="tag">OpenAI</span>
                                 <span class="tag">Google Drive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>AI Contract Reviewer &amp; Key Terms Extractor</h3>
+                            <p class="project-subtitle">n8n + Gemini &middot; End-to-end document workflow</p>
+                            <p>Drop a PDF contract into a Drive folder. Gemini reads the full text, extracts payment terms, deadlines, renewal dates, liability clauses, and risk flags, then auto-generates a structured Google Doc summary and creates calendar reminders for every key date. Slack notification on completion.</p>
+                            <div class="tag-list">
+                                <span class="tag">n8n</span>
+                                <span class="tag">Gemini AI</span>
+                                <span class="tag">Google Drive</span>
+                                <span class="tag">Google Docs</span>
+                                <span class="tag">Calendar API</span>
+                                <span class="tag">PDF Processing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>Client Onboarding Pipeline</h3>
+                            <p class="project-subtitle">n8n + HubSpot &middot; 5-platform automation</p>
+                            <p>Triggers from a new HubSpot contact and runs the full onboarding setup hands-free: builds a structured Google Drive folder tree, spins up an Asana project with 5 onboarding tasks, sends a personalized welcome email via Gmail, and posts to a #new-clients Slack channel. Single trigger, five platforms, zero manual steps.</p>
+                            <div class="tag-list">
+                                <span class="tag">n8n</span>
+                                <span class="tag">HubSpot CRM</span>
+                                <span class="tag">Google Drive</span>
+                                <span class="tag">Asana</span>
+                                <span class="tag">Gmail</span>
+                                <span class="tag">Slack</span>
                             </div>
                         </div>
                     </div>
@@ -826,6 +876,38 @@
                     <div class="project-item">
                         <div class="project-thumb no-img">&lt;/&gt;</div>
                         <div class="project-content">
+                            <h3>Intercom Active Working Time Report</h3>
+                            <p class="project-subtitle">API-driven reporting &middot; Replaces missing native feature</p>
+                            <p>Intercom's built-in time tracking couldn't break down "Active Working" time by actual day, which broke daily productivity reporting for the support team. Built an API pipeline that pulls active working time per agent per day into Google Sheets and surfaces it as a continuously-updating report. Unblocked accurate capacity and performance analysis for the team.</p>
+                            <div class="tag-list">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Intercom API</span>
+                                <span class="tag">Google Sheets</span>
+                                <span class="tag">Reporting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
+                            <h3>Intercom Fin AI - Help Library Auto-Sync</h3>
+                            <p class="project-subtitle">Production pipeline &middot; GCP &middot; Headless browser automation</p>
+                            <p>Intercom Fin couldn't natively learn from Google Workspace help docs (different domain, no API). Designed and shipped a sync pipeline that scrapes the help guides, formats them for Fin's AI training import, and keeps everything current with a headless auto-update system that runs daily checks, archives outdated articles, and alerts on failures. Deployed to a dedicated GCP project. Led the broader initiative across the engineering team.</p>
+                            <div class="tag-list">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">GCP</span>
+                                <span class="tag">Intercom Fin</span>
+                                <span class="tag">Google Workspace</span>
+                                <span class="tag">Headless Browser</span>
+                                <span class="tag">AI Training</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item hidden-project">
+                        <div class="project-thumb no-img">&lt;/&gt;</div>
+                        <div class="project-content">
                             <h3>CX Score Monitoring &amp; Reporting</h3>
                             <p class="project-subtitle">Multi-step automation &middot; Intercom + Asana</p>
                             <p>Monitors customer satisfaction scores from Intercom conversations in real time. Low scores automatically generate detailed reports in Asana with Slack alerts, giving the team instant visibility into customer experience issues.</p>
@@ -838,7 +920,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item">
+                    <div class="project-item hidden-project">
                         <div class="project-thumb no-img">&lt;/&gt;</div>
                         <div class="project-content">
                             <h3>Stripe + Intercom Billing Integration</h3>
@@ -869,7 +951,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item">
+                    <div class="project-item hidden-project">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
                             <img src="images/escalation-system.png" alt="Zapier editor showing escalation automation flow">
                         </div>
@@ -886,7 +968,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item">
+                    <div class="project-item hidden-project">
                         <div class="project-thumb clickable-image" role="button" tabindex="0" aria-label="View full-size image">
                             <img src="images/domain-attribute.png" alt="Intercom user data panel showing Domain attribute">
                         </div>
